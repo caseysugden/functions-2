@@ -6,7 +6,7 @@
 */
 
 // CODE HERE
-
+const multiply = (x, y, callback) => callback(x * y);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -16,8 +16,6 @@
 //   console.log('The answer is ' + answer) //should console.log 12
 // })
 
-
-
 ////////// PROBLEMS 2 - 6 //////////
 
 // The names array will be used in problems 2 - 6.
@@ -25,8 +23,6 @@
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // Do not edit the code above.
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -36,7 +32,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const first = (arr, cb) => cb(arr[0]);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -46,8 +42,6 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 //   console.log('The first name in names is ' + firstName)
 // })
 
-
-
 ////////// PROBLEM 3 //////////
 
 /*
@@ -56,7 +50,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const last = (arr, cb) => cb(arr[arr.length -1]);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -65,8 +59,6 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // last(names, lastName => {
 //   console.log('The last name in names is ' + lastName)
 // })
-
-
 
 ////////// PROBLEM 4 //////////
 
@@ -78,7 +70,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const contains = (arr, name, cb) => cb(arr.includes(name));
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -92,8 +84,6 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 //   }
 // })
 
-
-
 ////////// PROBLEM 5 //////////
 
 /*
@@ -103,7 +93,11 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const uniq = (arr, cb) => {
+  let set = new Set([...arr]);
+  arr = [...set];
+  cb(arr);
+}
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -112,8 +106,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
-
+uniq(names, uniqArr => console.log(`The new names array with the duplicate items removed is ${uniqArr}`));
 
 ////////// PROBLEM 6 //////////
 
@@ -123,7 +116,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const each = (arr, cb) => arr.forEach((element, index) => cb(element, index));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
