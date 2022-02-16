@@ -126,6 +126,7 @@ const each = (arr, cb) => arr.forEach((element, index) => cb(element, index));
 */
 
 // CODE HERE
+each(names, (item, index) => console.log(`The item at index ${index} is ${item}.`));
 
 
 ////////// PROBLEM 7 //////////
